@@ -19,6 +19,7 @@ Ten kurs prowadzi krok po kroku przez nowoczesny proces pracy z danymi w Pythoni
 9. [Sztuczne sieci neuronowe i łączenie klasyfikatorów](modules/09_nn_ensembles.md)
 10. [Wizualizowanie wyników modeli](modules/10_wizualizacja_wynikow.md)
 11. [Wstęp do Polars](modules/11_polars_wstep.md)
+12. [Pandas vs Polars – porównanie](modules/12_pandas_vs_polars.md)
 
 ### Rozwiązania ćwiczeń
 - Rozwiązania do zadań znajdują się w katalogu `solutions` i odpowiadają numeracji modułów:
@@ -33,6 +34,7 @@ Ten kurs prowadzi krok po kroku przez nowoczesny proces pracy z danymi w Pythoni
   - [09 – NN i ensembling](solutions/09_nn_ensembles_rozwiazania.md)
   - [10 – Wizualizacja wyników](solutions/10_wizualizacja_wynikow_rozwiazania.md)
   - [11 – Polars](solutions/11_polars_rozwiazania.md)
+  - [12 – Pandas vs Polars](solutions/12_pandas_vs_polars_rozwiazania.md)
 
 ---
 
