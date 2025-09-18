@@ -19,6 +19,19 @@ Ten kurs prowadzi krok po kroku przez nowoczesny proces pracy z danymi w Pythoni
 9. [Sztuczne sieci neuronowe i łączenie klasyfikatorów](modules/09_nn_ensembles.md)
 10. [Wizualizowanie wyników modeli](modules/10_wizualizacja_wynikow.md)
 
+### Rozwiązania ćwiczeń
+- Rozwiązania do zadań znajdują się w katalogu `solutions` i odpowiadają numeracji modułów:
+  - [01 – Przetwarzanie danych](solutions/01_przetwarzanie_danych_rozwiazania.md)
+  - [02 – NumPy](solutions/02_numpy_rozwiazania.md)
+  - [03 – Pandas](solutions/03_pandas_rozwiazania.md)
+  - [04 – Data Cleaning](solutions/04_data_cleaning_rozwiazania.md)
+  - [05 – Analiza i wizualizacje](solutions/05_analiza_wizualizacje_rozwiazania.md)
+  - [06 – Statystyka](solutions/06_statystyka_rozwiazania.md)
+  - [07 – Proces ML](solutions/07_ml_process_rozwiazania.md)
+  - [08 – Metody ML](solutions/08_ml_methods_rozwiazania.md)
+  - [09 – NN i ensembling](solutions/09_nn_ensembles_rozwiazania.md)
+  - [10 – Wizualizacja wyników](solutions/10_wizualizacja_wynikow_rozwiazania.md)
+
 ---
 
 Autor: Twój zespół. Licencja: CC BY 4.0.
