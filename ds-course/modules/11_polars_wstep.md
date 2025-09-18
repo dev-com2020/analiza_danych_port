@@ -73,6 +73,25 @@ df_parq = pl.read_parquet("data/events.parquet")
 df_csv.write_parquet("artifacts/customers.parquet")
 ```
 
+### Excel w Polars
+- Odczyt .xlsx: `pip install openpyxl` i użyj `pl.read_excel` (Polars ≥0.20). Alternatywnie skorzystaj z `pyxlsb` dla .xlsb.
+- Zapis do .xlsx: bezpośredni eksport przez `write_excel` (jeśli dostępny w Twojej wersji) lub eksport do CSV/Parquet i zapis przez Pandas `ExcelWriter`.
+```python
+import polars as pl
+
+# odczyt pojedynczego arkusza
+df_x = pl.read_excel("data/report.xlsx", sheet_name="Sales", engine="openpyxl")
+
+# odczyt wielu arkuszy – zwraca dict nazwa->DataFrame
+dfs = pl.read_excel("data/report.xlsx", sheet_name=["Sales", "Expenses"], engine="openpyxl")
+print(dfs["Sales"].head())
+
+# zapis do xlsx (fallback przez pandas, jeśli Twoja wersja Polars nie wspiera write_excel)
+import pandas as pd
+with pd.ExcelWriter("artifacts/polars_summary.xlsx", engine="xlsxwriter") as writer:
+    dfs["Sales"].to_pandas().to_excel(writer, sheet_name="Sales", index=False)
+```
+
 ### Ćwiczenia
 - Wczytaj CSV do `LazyFrame`, dodaj kolumnę `revenue = Quantity*Price`, zagreguj miesięcznie i zapisz do Parquet.
 - Użyj wyrażeń do policzenia `zscore` dla kolumny liczbowej (średnia i std z `pl.mean`, `pl.std`).

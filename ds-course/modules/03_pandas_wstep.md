@@ -35,6 +35,35 @@ df_csv2 = pd.read_csv(
 )
 ```
 
+### Excel w Pandas (odczyt i zapis)
+- Silniki: dla .xlsx zalecane `openpyxl` (odczyt/zapis), alternatywnie `xlsxwriter` (zapis). Zainstaluj: `pip install openpyxl xlsxwriter`.
+- Dla legacy .xls możesz użyć `xlrd==1.2.0` (nowsze xlrd nie wspiera .xlsx).
+```python
+# odczyt wybranych arkuszy i kolumn
+df_xlsx = pd.read_excel(
+    "data/report.xlsx",
+    sheet_name=["Sales", "Expenses"],  # lista lub nazwa
+    usecols="A:D",
+    dtype={"CustomerID": "Int64"},
+    engine="openpyxl",
+)
+
+# praca z wieloma arkuszami via ExcelFile
+with pd.ExcelFile("data/report.xlsx", engine="openpyxl") as xls:
+    sales = pd.read_excel(xls, sheet_name="Sales")
+    expenses = pd.read_excel(xls, sheet_name="Expenses")
+
+# zapis do wielu arkuszy z formatowaniem przez xlsxwriter
+with pd.ExcelWriter("artifacts/summary.xlsx", engine="xlsxwriter") as writer:
+    sales.to_excel(writer, sheet_name="Sales", index=False)
+    expenses.to_excel(writer, sheet_name="Expenses", index=False)
+    # przykładowe formatowanie
+    workbook = writer.book
+    worksheet = writer.sheets["Sales"]
+    money_fmt = workbook.add_format({"num_format": "#,##0.00"})
+    worksheet.set_column("C:C", 12, money_fmt)
+```
+
 ### Pozyskiwanie danych – zasoby w internecie
 ```python
 import pandas as pd
