@@ -20,6 +20,7 @@ Ten kurs prowadzi krok po kroku przez nowoczesny proces pracy z danymi w Pythoni
 10. [Wizualizowanie wyników modeli](modules/10_wizualizacja_wynikow.md)
 11. [Wstęp do Polars](modules/11_polars_wstep.md)
 12. [Pandas vs Polars – porównanie](modules/12_pandas_vs_polars.md)
+13. [AI/ML: Pozyskiwanie informacji o genach i białkach (NCBI/UniProt)](modules/13_bio_geny_bialka_ai_ml.md)
 
 ### Rozwiązania ćwiczeń
 - Rozwiązania do zadań znajdują się w katalogu `solutions` i odpowiadają numeracji modułów:
@@ -35,6 +36,7 @@ Ten kurs prowadzi krok po kroku przez nowoczesny proces pracy z danymi w Pythoni
   - [10 – Wizualizacja wyników](solutions/10_wizualizacja_wynikow_rozwiazania.md)
   - [11 – Polars](solutions/11_polars_rozwiazania.md)
   - [12 – Pandas vs Polars](solutions/12_pandas_vs_polars_rozwiazania.md)
+  - [13 – Bio: geny i białka](solutions/13_bio_geny_bialka_rozwiazania.md)
 
 ---
 
