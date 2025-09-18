@@ -59,3 +59,9 @@ print(df_orders.shape)
 ```
 
 W praktyce kluczowe są poprawne typy kolumn, jawne traktowanie `NaN` oraz kontrola pamięci (`usecols`, `dtype`, chunking przez `chunksize`).
+
+### Ćwiczenia
+- Wczytaj zbiór `tips` z URL i sprawdź rozkład braków.
+- Zamień typ kolumny `smoker` na kategoriczny i policz średni `tip` wg `smoker` i `day`.
+- Z pliku CSV wczytaj tylko wybrane kolumny (`usecols`) i ustaw właściwe `dtype`.
+- Połącz dane z bazy (np. `orders`) i z CSV (`customers`) po kluczach.

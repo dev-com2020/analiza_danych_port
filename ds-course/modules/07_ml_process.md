@@ -46,3 +46,8 @@ grid = GridSearchCV(pipe, param_grid=param_grid, cv=5, scoring="roc_auc")
 grid.fit(X_train, y_train)
 print(grid.best_params_, grid.best_score_)
 ```
+
+### Ćwiczenia
+- Dla wybranego zbioru danych przygotuj pipeline: skalowanie + model, z walidacją krzyżową.
+- Porównaj 2 modele (np. logistyczna vs. SVM) na tych samych cechach – wybierz lepszy po ROC-AUC.
+- Narysuj krzywą uczenia i zinterpretuj, czy problem to high bias czy high variance.

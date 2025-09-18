@@ -67,3 +67,8 @@ plt.show()
 ```
 
 W praktyce pamiętaj o kontekście: dobieraj typ wykresu do pytania analitycznego.
+
+### Ćwiczenia
+- Na zbiorze `tips` narysuj: histogram `total_bill` z KDE oraz boxplot `tip` wg `day`.
+- Przygotuj wykres punktowy `total_bill` vs `tip` z rozróżnieniem kolorem `smoker` i kształtem `sex`.
+- Zgrupuj dane po `day` i `time`, policz średni `tip` i narysuj wykres kolumnowy z błędami standardowymi.

@@ -83,3 +83,10 @@ print(x)
 ```
 
 Uwagi wydajnościowe: preferuj operacje na całych tablicach zamiast pętli w czystym Pythonie.
+
+### Ćwiczenia
+- Utwórz wektor liczb od 0 do 99 i wyciągnij co piątą wartość.
+- Zbuduj macierz 10x10 z liczb 0..99 i odwróć kolejność kolumn.
+- Wykorzystaj maskę do wybrania elementów podzielnych przez 3 i 5.
+- Zademonstruj broadcasting: dodaj wektor długości 10 do każdej kolumny macierzy 10x10.
+- Rozwiąż układ równań: `2x + y = 5`, `x - y = 1` przy użyciu `np.linalg.solve`.

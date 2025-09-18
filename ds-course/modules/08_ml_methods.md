@@ -72,3 +72,9 @@ X2_tsne = tsne.fit_transform(X)
 ```
 
 Wybór metryki: regresja – MSE/RMSE/MAE/R2; klasyfikacja – Accuracy/Precision/Recall/F1/ROC-AUC; grupowanie – silhouette score; redukcja – wyjaśniona wariancja.
+
+### Ćwiczenia
+- Na `fetch_california_housing` porównaj regresję liniową i wielomianową (stopnie 2–3).
+- Dla `breast_cancer` porównaj LogisticRegression i RandomForest – raport metryk.
+- Przeprowadź KMeans dla danych 2D i narysuj klastry; policz silhouette score dla k=2..6.
+- Zastosuj PCA do 2D i TSNE do wizualizacji klastrów – porównaj.

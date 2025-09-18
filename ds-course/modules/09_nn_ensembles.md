@@ -50,3 +50,8 @@ plt.show()
 ```
 
 W praktyce do sieci głębokich użyj `tensorflow/keras` lub `pytorch` i GPU.
+
+### Ćwiczenia
+- Wytrenuj `MLPClassifier` na `digits`, porównaj różne rozmiary warstw i aktywacje.
+- Porównaj RandomForest, GradientBoosting i Stacking (SVC+RF -> LR) na tym samym zbiorze.
+- Zdefiniuj metrykę główną i narysuj macierz pomyłek najlepszego modelu.

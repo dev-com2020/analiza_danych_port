@@ -48,3 +48,8 @@ plt.barh(range(len(idx)), importances[idx]); plt.yticks(range(len(idx)), idx); p
 ```
 
 Wizualizacja to narzędzie komunikacji – dostosuj wykresy do odbiorcy i problemu.
+
+### Ćwiczenia
+- Zbuduj panel 2x2: macierz pomyłek, krzywa ROC, krzywa PR oraz ważność cech.
+- Dla trzech modeli na tym samym zbiorze narysuj na jednym wykresie 3 krzywe ROC.
+- Zastosuj SHAP (opcjonalnie) do zinterpretowania 10 najwyższych ważności cech.

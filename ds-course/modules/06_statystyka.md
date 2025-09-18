@@ -37,3 +37,8 @@ print(t_stat, p_value)
 ```
 
 Uwaga: dobór testu zależy od rozkładu danych, liczebności i założeń (normalność, wariancje).
+
+### Ćwiczenia
+- Oblicz 95% przedział ufności średniej dla `tip` metodą bootstrap.
+- Przeprowadź test t-Studenta porównujący `tip` między `smoker`=Yes/No.
+- Oszacuj korelację Spearmana między `total_bill` a `tip` i porównaj z Pearsonem.

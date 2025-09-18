@@ -41,3 +41,9 @@ by_month.to_csv("artifacts/revenue_by_month.csv")
 ```
 
 Następne moduły pogłębiają techniki NumPy, Pandas i ML.
+
+### Ćwiczenia
+- Załaduj plik CSV z transakcjami, wylistuj typy kolumn i liczbę wartości brakujących.
+- Przekonwertuj kolumnę daty na `datetime`, odfiltruj wiersze z brakami w kluczowych kolumnach.
+- Dodaj kolumnę przychodu jako iloczyn ilości i ceny, policz przychód miesięczny.
+- Zapisz wynik do `artifacts/revenue_by_month.csv` oraz narysuj prosty wykres liniowy.

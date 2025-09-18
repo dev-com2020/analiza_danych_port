@@ -59,3 +59,9 @@ df_join2 = orders_idx.join(customers_idx, how="left")
 ```
 
 Pamiętaj o kontroli duplikatów kluczy oraz typów podczas łączenia ramek.
+
+### Ćwiczenia
+- Usuń kolumny o wysokim udziale braków (>30%) i uzasadnij wybór.
+- Użyj `melt` i `pivot_table`, aby przejść między formą szeroką a długą.
+- Posortuj dane po dwóch kolumnach i dodaj ranking z remisami (`method="dense"`).
+- Połącz trzy ramki: `orders`, `customers`, `products` i policz wartość koszyka.
