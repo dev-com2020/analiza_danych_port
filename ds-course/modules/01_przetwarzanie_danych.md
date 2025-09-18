@@ -47,3 +47,9 @@ Następne moduły pogłębiają techniki NumPy, Pandas i ML.
 - Przekonwertuj kolumnę daty na `datetime`, odfiltruj wiersze z brakami w kluczowych kolumnach.
 - Dodaj kolumnę przychodu jako iloczyn ilości i ceny, policz przychód miesięczny.
 - Zapisz wynik do `artifacts/revenue_by_month.csv` oraz narysuj prosty wykres liniowy.
+
+### Optymalizacja dużych przepływów danych – skrót
+- Zawsze filtruj i wybieraj kolumny jak najwcześniej w pipeline.
+- Preferuj formaty kolumnowe (Parquet) i narzędzia z lazy/streaming (Polars `scan_*`, Pandas `chunksize`).
+- Jawnie ustawiaj typy (np. `category`, `Float32`, `Int32`) i unikaj niepotrzebnych konwersji.
+- Agreguj inkrementalnie dla bardzo dużych plików zamiast trzymać wszystko w pamięci.

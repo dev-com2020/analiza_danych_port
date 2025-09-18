@@ -92,6 +92,25 @@ with pd.ExcelWriter("artifacts/polars_summary.xlsx", engine="xlsxwriter") as wri
     dfs["Sales"].to_pandas().to_excel(writer, sheet_name="Sales", index=False)
 ```
 
+### Optymalizacja pracy z dużymi danymi (Polars)
+- Używaj `LazyFrame` (`scan_csv`, `scan_parquet`) – optymalizator zapytań (projection/predicate pushdown).
+- Preferuj formaty kolumnowe (`Parquet`) i `collect(streaming=True)` przy ograniczonej pamięci.
+- Operuj wyrażeniami, `select` i `with_columns`; unikaj materializacji pełnych ramek.
+- Kontroluj typy (`dtypes` przy wczytywaniu, `cast`), porządkuj układ pamięci `rechunk()`.
+```python
+import polars as pl
+
+lf = (
+    pl.scan_parquet("data/huge_dataset.parquet")
+    .select(["order_date", "Quantity", "Price"])            # projection pushdown
+    .filter(pl.col("order_date") >= pl.datetime(2024,1,1))     # predicate pushdown
+    .with_columns((pl.col("Quantity") * pl.col("Price")).alias("revenue"))
+    .group_by_dynamic(index_column="order_date", every="1mo")
+    .agg(pl.col("revenue").sum().alias("rev"))
+)
+result = lf.collect(streaming=True)
+```
+
 ### Ćwiczenia
 - Wczytaj CSV do `LazyFrame`, dodaj kolumnę `revenue = Quantity*Price`, zagreguj miesięcznie i zapisz do Parquet.
 - Użyj wyrażeń do policzenia `zscore` dla kolumny liczbowej (średnia i std z `pl.mean`, `pl.std`).

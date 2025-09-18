@@ -94,3 +94,32 @@ W praktyce kluczowe są poprawne typy kolumn, jawne traktowanie `NaN` oraz kontr
 - Zamień typ kolumny `smoker` na kategoriczny i policz średni `tip` wg `smoker` i `day`.
 - Z pliku CSV wczytaj tylko wybrane kolumny (`usecols`) i ustaw właściwe `dtype`.
 - Połącz dane z bazy (np. `orders`) i z CSV (`customers`) po kluczach.
+
+### Optymalizacja pracy z dużymi plikami (Pandas)
+- Preferuj formaty kolumnowe (Parquet/Feather) zamiast CSV: szybsze IO i mniejszy rozmiar.
+- Ogranicz zakres danych: `usecols`, `nrows`, `skiprows`, filtry wstępne po stronie źródła.
+- Jawnie ustaw `dtype` (np. `Int64`, `Float32`, `category`) i konwertuj po wczytaniu (`astype`).
+- Wczytuj w kawałkach: `chunksize=...`, przetwarzaj i zapisuj wyniki inkrementalnie.
+- Rozważ backend strzałkowy: `dtype_backend="pyarrow"` (Pandas 2.x) dla lepszej pamięci i Null.
+- Mmap i parser: `memory_map=True`, `engine="pyarrow"` (jeśli dostępny) dla `read_csv`.
+```python
+# chunking i agregacja inkrementalna
+import pandas as pd
+
+total = 0.0
+for chunk in pd.read_csv(
+    "data/huge_sales.csv",
+    usecols=["order_date","Quantity","Price"],
+    parse_dates=["order_date"],
+    dtype={"Quantity":"Int32","Price":"Float32"},
+    chunksize=1_000_000,
+    memory_map=True,
+    engine="pyarrow",
+):
+    chunk["revenue"] = chunk["Quantity"] * chunk["Price"]
+    total += chunk["revenue"].sum()
+print(total)
+
+# wczytanie z backendem pyarrow (Pandas 2.x)
+df = pd.read_csv("data/huge.csv", dtype_backend="pyarrow", usecols=lambda c: c != "unused")
+```
